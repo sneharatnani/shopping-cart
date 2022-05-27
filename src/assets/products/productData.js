@@ -43,25 +43,25 @@ const productData = [
     url: img6,
     title: "Air Jordan 1 Mid",
     id: "6",
-    price: "₹10,795",
+    price: "₹10795",
   },
   {
     url: img7,
     title: "Nike Waffle One",
     id: "7",
-    price: "₹8,295",
+    price: "₹8295",
   },
   {
     url: img8,
     title: "Nike Air Presto x Hello Kitty",
     id: "8",
-    price: "₹12,995",
+    price: "₹12995",
   },
   {
     url: img9,
     title: "Nike Zoom Fly 4",
     id: "9",
-    price: "₹14,495",
+    price: "₹14495",
   },
 ];
 

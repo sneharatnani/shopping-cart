@@ -9,7 +9,7 @@ export default function Home() {
       >
         shop now
       </Link>
-      <div className="fixed z-10 top-[10vh] bottom-0 left-0 right-0 w-full h-full bg-black opacity-50"></div>
+      {/* <div className="fixed z-10 top-[10vh] bottom-0 left-0 right-0 w-full h-[90vh] bg-black opacity-50"></div> */}
     </div>
   );
 }

@@ -10,9 +10,43 @@ export default function Checkout() {
     (product) => product.id === productInfo
   );
   // get digits from price string
-  const getDigits = () => finalProduct.price.match(/\d+/);
-  console.log(getDigits());
-  //   const [finalPrice, setFinalPrice] = useState()
+  const getDigits = () => +finalProduct.price.match(/\d+/g)[0];
+  // set number of products to count the price
+  const [numOfProducts, setNumOfProducts] = useState(1);
 
-  return <h1>this is Cart</h1>;
+  function increaseProducts() {
+    setNumOfProducts((prevNum) => prevNum + 1);
+  }
+
+  function decreaseProducts() {
+    setNumOfProducts((prevNum) => (prevNum === 0 ? prevNum : prevNum - 1));
+  }
+
+  return (
+    <div className="w-1/2 flex h-[50vh] ml-8 mt-4">
+      <img src={finalProduct.url} alt="a shoe" />
+      <section className="ml-8">
+        <p>Number of products:</p>
+        <p className="border-2 inline-block text-lg font-bold">
+          <button
+            onClick={increaseProducts}
+            className="border-r-2 text-[1.5rem] font-bold px-3"
+          >
+            +
+          </button>
+          <span className="px-3">{numOfProducts}</span>
+          <button
+            onClick={decreaseProducts}
+            className="border-l-2 text-[1.5rem] font-bold px-3"
+          >
+            -
+          </button>
+        </p>
+        <p>
+          <span className="font-bold">Order Total:</span> <br />
+          {getDigits() * numOfProducts}
+        </p>
+      </section>
+    </div>
+  );
 }
