@@ -1,9 +1,13 @@
-import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useParams } from "react-router-dom";
 import productData from "../assets/products/productData.js";
+import { ProductContext } from "../ProductContext.js";
 
 export default function ProductDetails() {
   const { productId } = useParams();
   const product = productData.find((pro) => productId === pro.id);
+  // context
+  const { updateInfo } = useContext(ProductContext);
 
   return (
     <div className="flex h-[53vh] w-[60vw] mt-8 mx-auto">
@@ -23,9 +27,13 @@ export default function ProductDetails() {
           Numquam officiis eum non, neque eligendi aperiam, debitis ad porro
           asperiores itaque dolor?
         </p>
-        <button className="bg-black text-white font-bold w-40 py-4 rounded mt-3">
+        <Link
+          to="/cart"
+          onClick={() => updateInfo(product.id)}
+          className="bg-black text-white font-bold p-4 rounded inline-block mt-4"
+        >
           Add To Cart
-        </button>
+        </Link>
       </section>
     </div>
   );
