@@ -3,7 +3,7 @@ import Cart from "./Cart.js";
 
 export default function Navbar() {
   return (
-    <header className="flex justify-between bg-slate-400 h-[10vh] items-center px-4">
+    <header className="flex justify-between h-[10vh] items-center px-4">
       <h1 className="text-2xl font-black">
         <Link to="/">Shopping Cart</Link>
       </h1>

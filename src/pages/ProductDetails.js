@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import productData from "../assets/products/productData.js";
 
 export default function ProductDetails() {
@@ -6,11 +6,13 @@ export default function ProductDetails() {
   const product = productData.find((pro) => productId === pro.id);
 
   return (
-    <div className="px-8">
-      <img src={product.url} alt="a shoe" className="py-5" />
-      <section>
+    <div className="flex h-[53vh] w-[60vw] mt-8 mx-auto">
+      <img src={product.url} alt="a shoe" className="" />
+      <section className="pl-4">
         <p className="font-bold">{product.title}</p>
         <p>{product.price}</p>
+
+        {/* fake description */}
         <p>
           <span className="font-bold">Description: </span>
           <br />
@@ -21,11 +23,9 @@ export default function ProductDetails() {
           Numquam officiis eum non, neque eligendi aperiam, debitis ad porro
           asperiores itaque dolor?
         </p>
-        <Link to="/cart">
-          <button className="bg-black text-white font-bold w-full py-4 rounded mt-3">
-            Add To Cart
-          </button>
-        </Link>
+        <button className="bg-black text-white font-bold w-40 py-4 rounded mt-3">
+          Add To Cart
+        </button>
       </section>
     </div>
   );
