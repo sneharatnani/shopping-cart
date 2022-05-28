@@ -8,16 +8,14 @@ import Footer from "./components/Footer.js";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <div>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/shop/:productId" element={<ProductDetails />} />
-          <Route path="/cart" element={<Checkout />} />
-        </Routes>
-      </div>
+    <div className="min-h-screen flex flex-col justify-between">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop/:productId" element={<ProductDetails />} />
+        <Route path="/cart" element={<Checkout />} />
+      </Routes>
       <Footer />
     </div>
   );

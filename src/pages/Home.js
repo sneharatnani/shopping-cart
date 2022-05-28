@@ -1,15 +1,29 @@
 import { Link } from "react-router-dom";
+import bg from "../assets/bg.png";
 
 export default function Home() {
   return (
-    <div className="home">
-      <Link
-        to="/shop"
-        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 capitalize z-20 text-white p-3 opacity-70 text-lg border"
-      >
-        shop now
-      </Link>
-      {/* <div className="fixed z-10 top-[10vh] bottom-0 left-0 right-0 w-full h-[90vh] bg-black opacity-50"></div> */}
+    <div className="h-[90vh] bg-gray-900">
+      <div className="m-auto lg:w-[80vw]">
+        <section className="absolute left-[10%] top-[57%] font-black capitalize md:top-2/3 lg:top-1/3">
+          <h1 className="text-white text-5xl mb-10 md:text-7xl">
+            style and
+            <span className="text-lime-300 lg:block"> comfort </span>
+            together
+          </h1>
+          <Link
+            to="/shop"
+            className="bg-button-gradient py-5 px-9 rounded-full text-2xl"
+          >
+            Shop Now
+          </Link>
+        </section>
+        <img
+          src={bg}
+          alt="green and white shoe"
+          className="absolute rotate-330 top-[16vh] right-[9vw] lg:h-2/3"
+        />
+      </div>
     </div>
   );
 }
