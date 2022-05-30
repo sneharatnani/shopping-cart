@@ -23,27 +23,30 @@ export default function Checkout() {
   }
 
   return (
-    <div className="w-1/2 flex h-[50vh] ml-8 mt-4">
-      <img src={finalProduct.url} alt="a shoe" />
-      <section className="ml-8">
-        <p>Number of products:</p>
-        <p className="border-2 inline-block text-lg font-bold">
+    <div className="flex capitalize pt-4 min-h-[90vh] bg-[whitesmoke] items-center">
+      <img src={finalProduct.url} alt="a shoe" className="scale-[0.3] -ml-28" />
+      <section className="self-center -ml-24">
+        <h1 className="font-black text-gray-800 text-lg">
+          {finalProduct.title}
+        </h1>
+        <p>quantity:</p>
+        <p className="border-2 inline-block text-lg my-2">
           <button
             onClick={increaseProducts}
-            className="border-r-2 text-[1.5rem] font-bold px-3"
+            className="border-r-2 text-[1.5rem] px-3"
           >
             +
           </button>
           <span className="px-3">{numOfProducts}</span>
           <button
             onClick={decreaseProducts}
-            className="border-l-2 text-[1.5rem] font-bold px-3"
+            className="border-l-2 text-[1.5rem] px-3"
           >
             -
           </button>
         </p>
         <p>
-          <span className="font-bold">Order Total:</span> <br />
+          <span>Sub Total:</span> <br />
           {getDigits() * numOfProducts}
         </p>
       </section>

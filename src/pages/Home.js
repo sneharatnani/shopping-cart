@@ -3,7 +3,7 @@ import bg from "../assets/bg.png";
 
 export default function Home() {
   return (
-    <div className="h-[90vh] bg-gray-900">
+    <div className="h-[90vh]">
       <div className="m-auto lg:w-[80vw]">
         <section className="absolute left-[10%] top-[57%] font-black capitalize md:top-2/3 lg:top-1/3">
           <h1 className="text-white text-5xl mb-10 md:text-7xl">

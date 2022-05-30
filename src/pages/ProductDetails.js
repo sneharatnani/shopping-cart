@@ -10,27 +10,20 @@ export default function ProductDetails() {
   const { updateInfo } = useContext(ProductContext);
 
   return (
-    <div className="flex h-[53vh] w-[60vw] mt-8 mx-auto">
-      <img src={product.url} alt="a shoe" className="" />
-      <section className="pl-4">
-        <p className="font-bold">{product.title}</p>
-        <p>{product.price}</p>
-
-        {/* fake description */}
-        <p>
-          <span className="font-bold">Description: </span>
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nulla
-          soluta repellat excepturi dolorum, repudiandae laborum quam eum
-          maiores qui est iure vitae cupiditate quos perspiciatis nostrum enim
-          sed. Quo unde magnam doloremque soluta maxime voluptatem pariatur?
-          Numquam officiis eum non, neque eligendi aperiam, debitis ad porro
-          asperiores itaque dolor?
-        </p>
+    <div className="h-[90vh] text-gray-800 bg-[whitesmoke]">
+      <img
+        src={product.url}
+        alt="a shoe"
+        className="top-[23vh] absolute rotate-330 right-[9vw]  md:top-[26vh] md:h-[36%] 
+        lg:top-[30vh] lg:right-[5vw] lg:h-[48%]"
+      />
+      <section className="absolute left-[10%] top-[59%] font-black capitalize md:top-[70%] lg:top-[37%]">
+        <p className="text-5xl">{product.title}</p>
+        <p className="text-xl mt-3 mb-11">{product.price}</p>
         <Link
           to="/cart"
           onClick={() => updateInfo(product.id)}
-          className="bg-black text-white font-bold p-4 rounded inline-block mt-4"
+          className="bg-button-gradient py-5 px-9 rounded-full text-2xl"
         >
           Add To Cart
         </Link>

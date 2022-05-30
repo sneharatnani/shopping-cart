@@ -7,8 +7,8 @@ export default function Card(props) {
       <Link to={`/shop/${id}`}>
         <img src={url} alt="a Shoe" />
       </Link>
-      <p className="font-bold">{title}</p>
-      <p className="py-2">{price}</p>
+      <p className="font-bold pb-2 pt-4">{title}</p>
+      <p className="pb-4">{price}</p>
     </div>
   );
 }

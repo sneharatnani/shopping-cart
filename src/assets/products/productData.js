@@ -17,7 +17,7 @@ const productData = [
   },
   {
     url: img2,
-    title: "PG 6 EP Basketball Shoes",
+    title: "PG 6 EP Shoes",
     id: "2",
     price: "₹14999",
   },
@@ -35,7 +35,7 @@ const productData = [
   },
   {
     url: img5,
-    title: "Air Jordan XXXVI SE Basketball Shoe",
+    title: "Air Jordan SE Shoe",
     id: "5",
     price: "₹7599",
   },
@@ -53,7 +53,7 @@ const productData = [
   },
   {
     url: img8,
-    title: "Nike Air Presto x Hello Kitty",
+    title: "Nike Air Hello Kitty",
     id: "8",
     price: "₹12995",
   },
