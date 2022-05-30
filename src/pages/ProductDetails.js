@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import productData from "../assets/products/productData.js";
 import { ProductContext } from "../ProductContext.js";
 
@@ -20,13 +20,12 @@ export default function ProductDetails() {
       <section className="absolute left-[10%] top-[59%] font-black capitalize md:top-[70%] lg:top-[37%]">
         <p className="text-5xl">{product.title}</p>
         <p className="text-xl mt-3 mb-11">{product.price}</p>
-        <Link
-          to="/cart"
+        <button
           onClick={() => updateInfo(product.id)}
           className="bg-button-gradient py-5 px-9 rounded-full text-2xl"
         >
           Add To Cart
-        </Link>
+        </button>
       </section>
     </div>
   );

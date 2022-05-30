@@ -3,10 +3,10 @@ import { createContext, useState } from "react";
 const ProductContext = createContext();
 
 export default function ProductContextProvider(props) {
-  const [productInfo, setProductInfo] = useState("");
+  const [productInfo, setProductInfo] = useState([]);
 
-  function updateInfo(newProduct) {
-    setProductInfo(newProduct);
+  function updateInfo(newProductId) {
+    setProductInfo((prevIds) => [...prevIds, newProductId]);
   }
 
   return (
