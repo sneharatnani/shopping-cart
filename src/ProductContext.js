@@ -5,12 +5,8 @@ const ProductContext = createContext();
 export default function ProductContextProvider(props) {
   const [productInfo, setProductInfo] = useState([]);
 
-  function updateInfo(newProductId) {
-    setProductInfo((prevIds) => [...prevIds, newProductId]);
-  }
-
   return (
-    <ProductContext.Provider value={{ productInfo, updateInfo }}>
+    <ProductContext.Provider value={{ productInfo, setProductInfo }}>
       {props.children}
     </ProductContext.Provider>
   );

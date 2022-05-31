@@ -8,7 +8,7 @@ export default function Card(props) {
         <img src={url} alt="a Shoe" />
       </Link>
       <p className="font-bold pb-2 pt-4">{title}</p>
-      <p className="pb-4">{price}</p>
+      <p className="pb-4">₹{price}</p>
     </div>
   );
 }

@@ -7,7 +7,12 @@ export default function ProductDetails() {
   const { productId } = useParams();
   const product = productData.find((pro) => productId === pro.id);
   // context
-  const { updateInfo } = useContext(ProductContext);
+  const { setProductInfo } = useContext(ProductContext);
+  function updateIds() {
+    setProductInfo((prevIds) =>
+      [...prevIds, product].map((obj) => (!obj.qty ? { ...obj, qty: 1 } : obj))
+    );
+  }
 
   return (
     <div className="h-[90vh] text-gray-800 bg-[whitesmoke]">
@@ -19,9 +24,9 @@ export default function ProductDetails() {
       />
       <section className="absolute left-[10%] top-[59%] font-black capitalize md:top-[70%] lg:top-[37%]">
         <p className="text-5xl">{product.title}</p>
-        <p className="text-xl mt-3 mb-11">{product.price}</p>
+        <p className="text-xl mt-3 mb-11">₹{product.price}</p>
         <button
-          onClick={() => updateInfo(product.id)}
+          onClick={updateIds}
           className="bg-button-gradient py-5 px-9 rounded-full text-2xl"
         >
           Add To Cart

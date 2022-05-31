@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import bg from "../assets/bg.png";
+import StyledLink from "../components/StyledLink.js";
 
 export default function Home() {
   return (
@@ -11,12 +11,7 @@ export default function Home() {
             <span className="text-lime-300 lg:block"> comfort </span>
             together
           </h1>
-          <Link
-            to="/shop"
-            className="bg-button-gradient py-5 px-9 rounded-full text-2xl"
-          >
-            Shop Now
-          </Link>
+          <StyledLink path="shop">Shop Now</StyledLink>
         </section>
         <img
           src={bg}
