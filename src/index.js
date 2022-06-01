@@ -3,15 +3,15 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import "./assets/styles.css";
-import { ProductContextProvider } from "./ProductContext.js";
+import { CartContextProvider } from "./CartContext.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ProductContextProvider>
+      <CartContextProvider>
         <App />
-      </ProductContextProvider>
+      </CartContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

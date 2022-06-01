@@ -1,27 +1,27 @@
 import { useContext } from "react";
-import { ProductContext } from "../ProductContext.js";
+import { CartContext } from "../CartContext.js";
 import CartItem from "../components/CartItem.js";
 import EmptyCart from "../components/EmptyCart.js";
 
 export default function Checkout() {
-  const { productInfo, setProductInfo } = useContext(ProductContext);
+  const { cartProducts, setCartProducts } = useContext(CartContext);
 
   function increaseProducts(id) {
-    setProductInfo((prevProducts) =>
+    setCartProducts((prevProducts) =>
       prevProducts.map((pro) =>
         pro.id === id ? { ...pro, qty: pro.qty + 1 } : pro
       )
     );
   }
   function decreaseProducts(id) {
-    setProductInfo((prevProducts) =>
+    setCartProducts((prevProducts) =>
       prevProducts
         .map((pro) => (pro.id === id ? { ...pro, qty: pro.qty - 1 } : pro))
         .filter((obj) => obj.qty !== 0)
     );
   }
 
-  const finalProducts = productInfo.map((pro) => (
+  const finalProducts = cartProducts.map((pro) => (
     <CartItem
       key={pro.id}
       {...pro}
@@ -31,20 +31,21 @@ export default function Checkout() {
   ));
 
   function getTotal() {
-    return productInfo
+    return cartProducts
+
       .map((pro) => pro.qty * pro.price)
       .reduce((prevValue, currentValue) => prevValue + currentValue, 0);
   }
 
   function removeAllProducts() {
-    setProductInfo([]);
+    setCartProducts([]);
   }
 
   return (
     <div className="bg-[whitesmoke] min-h-[90vh]">
-      {productInfo.length !== 0 ? finalProducts : <EmptyCart />}
-      {productInfo.length !== 0 && (
-        <section className="p-4 pb-12 text-right">
+      {cartProducts.length !== 0 ? finalProducts : <EmptyCart />}
+      {cartProducts.length !== 0 && (
+        <section className="p-4 pb-12 text-right md:mt-20 md:p-10 lg:absolute right-20 top-32">
           <hr />
           <p className="text-lg mt-4 mb-3">
             Order Total:{" "}

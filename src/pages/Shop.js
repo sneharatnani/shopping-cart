@@ -6,8 +6,8 @@ export default function Shop() {
 
   return (
     <main
-      className="grid md:grid-cols-3 justify-items-center py-8 gap-y-8 text-center
-    bg-white"
+      className="grid min-h-[90vh] justify-items-center py-8 gap-y-8 text-center
+    bg-white md:grid-cols-3"
     >
       {shoeCards}
     </main>

@@ -1,43 +1,27 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import productData from "../assets/products/productData.js";
-import { ProductContext } from "../ProductContext.js";
+import { CartContext } from "../CartContext.js";
 
 export default function ProductDetails() {
   const { productId } = useParams();
   const product = productData.find((pro) => productId === pro.id);
-  // context
-  const { setProductInfo, productInfo } = useContext(ProductContext);
+  const { setCartProducts } = useContext(CartContext);
   // add the product to list and if it already exists then increase the quantity
   function updateProducts() {
-    setProductInfo((prev) => {
-      if (prev.length === 0) {
+    setCartProducts((prevCart) => {
+      if (prevCart.length === 0) {
         return [{ ...product, qty: 1 }];
       } else {
-        return prev.map((pro) =>
-          pro.id !== productId
-            ? { ...product, qty: 1 }
-            : pro.id === productId
-            ? { ...pro, qty: pro.qty + 1 }
-            : pro
-        );
-        // return prev.map((prod) => {
-        //   if (prod.id === productId) {
-        //     prod.qty = prod.qty + 1;
-        //     return prod;
-        //   }
-
-        //   product.qty = 1;
-        //   return product;
-        // });
+        const isExists = prevCart.some((prod) => prod.id === productId);
+        const newCart = isExists
+          ? prevCart.map((prod) =>
+              prod.id === productId ? { ...prod, qty: prod.qty + 1 } : prod
+            )
+          : [...prevCart, { ...product, qty: 1 }];
+        return newCart;
       }
     });
-
-    console.log(productInfo);
-
-    // setProductInfo((prev) =>
-    //   [...prev, product].map((pro) => (!pro.qty ? { ...pro, qty: 1 } : pro))
-    // );
   }
 
   return (
