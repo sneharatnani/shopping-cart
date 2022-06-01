@@ -42,10 +42,10 @@ export default function Checkout() {
   }
 
   return (
-    <div className="bg-[whitesmoke] min-h-[90vh]">
+    <div className="bg-[whitesmoke] min-h-[80vh]">
       {cartProducts.length !== 0 ? finalProducts : <EmptyCart />}
       {cartProducts.length !== 0 && (
-        <section className="p-4 pb-12 text-right md:mt-20 md:p-10 lg:absolute right-20 top-32">
+        <section className="p-4 text-right right-20 top-24 lg:absolute">
           <hr />
           <p className="text-lg mt-4 mb-3">
             Order Total:{" "}

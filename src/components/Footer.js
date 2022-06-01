@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="text-center py-2 text-white bg-gray-800">
+    <footer className="text-center flex flex-col justify-center items-center h-[10vh] text-white bg-gray-800">
       <p>
         Crafted with<span> ❤ </span>
         By{" "}
@@ -12,7 +12,7 @@ export default function Footer() {
           Sneha Ratnani
         </a>
       </p>
-      <p>
+      <p className="text-sm">
         Image Credits:{" "}
         <a
           href="https://www.nike.com/in/"

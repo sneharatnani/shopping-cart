@@ -25,19 +25,25 @@ export default function ProductDetails() {
   }
 
   return (
-    <div className="h-[90vh] text-gray-800 bg-[whitesmoke]">
+    <div className="min-h-[80vh] text-gray-800 bg-[whitesmoke] font-black lg:h-[90vh]">
       <img
         src={product.url}
         alt="a shoe"
-        className="top-[23vh] absolute rotate-330 right-[9vw]  md:top-[26vh] md:h-[36%] 
-        lg:top-[30vh] lg:right-[5vw] lg:h-[48%]"
+        className="w-72 m-auto py-8 top-[23vh] right-[9vw] md:w-3/5 lg:w-[unset] lg:py-0 
+        lg:top-[30vh] lg:absolute lg:rotate-330 lg:right-[5vw] lg:h-[48%]"
       />
-      <section className="absolute left-[10%] top-[59%] font-black capitalize md:top-[70%] lg:top-[37%]">
-        <p className="text-5xl">{product.title}</p>
-        <p className="text-xl mt-3 mb-11">₹{product.price}</p>
+      <section className="w-11/12 m-auto left-[10%] top-[59%] capitalize md:w-4/5 lg:absolute lg:top-[37%] lg:w-[48%]">
+        <p className="text-2xl md:text-5xl">{product.title}</p>
+        <p className="font-normal text-sm normal-case pt-2 text-gray-600">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+        </p>
+        <p className="text-2xl mt-3 mb-6">₹{product.price}</p>
         <button
           onClick={updateProducts}
-          className="bg-button-gradient py-5 px-9 rounded-full text-2xl"
+          className="bg-button-gradient py-5 px-9 rounded-full text-2xl font-bold"
         >
           Add To Cart
         </button>
