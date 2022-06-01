@@ -7,11 +7,37 @@ export default function ProductDetails() {
   const { productId } = useParams();
   const product = productData.find((pro) => productId === pro.id);
   // context
-  const { setProductInfo } = useContext(ProductContext);
-  function updateIds() {
-    setProductInfo((prevIds) =>
-      [...prevIds, product].map((obj) => (!obj.qty ? { ...obj, qty: 1 } : obj))
-    );
+  const { setProductInfo, productInfo } = useContext(ProductContext);
+  // add the product to list and if it already exists then increase the quantity
+  function updateProducts() {
+    setProductInfo((prev) => {
+      if (prev.length === 0) {
+        return [{ ...product, qty: 1 }];
+      } else {
+        return prev.map((pro) =>
+          pro.id !== productId
+            ? { ...product, qty: 1 }
+            : pro.id === productId
+            ? { ...pro, qty: pro.qty + 1 }
+            : pro
+        );
+        // return prev.map((prod) => {
+        //   if (prod.id === productId) {
+        //     prod.qty = prod.qty + 1;
+        //     return prod;
+        //   }
+
+        //   product.qty = 1;
+        //   return product;
+        // });
+      }
+    });
+
+    console.log(productInfo);
+
+    // setProductInfo((prev) =>
+    //   [...prev, product].map((pro) => (!pro.qty ? { ...pro, qty: 1 } : pro))
+    // );
   }
 
   return (
@@ -26,7 +52,7 @@ export default function ProductDetails() {
         <p className="text-5xl">{product.title}</p>
         <p className="text-xl mt-3 mb-11">₹{product.price}</p>
         <button
-          onClick={updateIds}
+          onClick={updateProducts}
           className="bg-button-gradient py-5 px-9 rounded-full text-2xl"
         >
           Add To Cart

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ProductContext } from "../ProductContext.js";
 import CartItem from "../components/CartItem.js";
-import StyledLink from "../components/StyledLink.js";
+import EmptyCart from "../components/EmptyCart.js";
 
 export default function Checkout() {
   const { productInfo, setProductInfo } = useContext(ProductContext);
@@ -36,30 +36,26 @@ export default function Checkout() {
       .reduce((prevValue, currentValue) => prevValue + currentValue, 0);
   }
 
+  function removeAllProducts() {
+    setProductInfo([]);
+  }
+
   return (
     <div className="bg-[whitesmoke] min-h-[90vh]">
-      {productInfo.length !== 0 ? (
-        finalProducts
-      ) : (
-        <div
-          className="text-gray-800 w-full text-center absolute left-1/2 top-1/2 transform 
-        -translate-x-1/2 -translate-y-1/2"
-        >
-          <p className="font-black text-3xl">Your Shopping Cart Is Empty</p>
-          <p className="mb-8 mt-4 text-gray-500">
-            It's a good day to buy something you want!
-          </p>
-          <StyledLink path="shop">Continue Shopping</StyledLink>
-        </div>
-      )}
+      {productInfo.length !== 0 ? finalProducts : <EmptyCart />}
       {productInfo.length !== 0 && (
         <section className="p-4 pb-12 text-right">
           <hr />
-          <p className="text-lg mt-4 mb-7">
+          <p className="text-lg mt-4 mb-3">
             Order Total:{" "}
             <span className="text-xl font-bold">₹{getTotal()}</span>
           </p>
-          <StyledLink>Place Order</StyledLink>
+          <button
+            onClick={removeAllProducts}
+            className="bg-gray-800 text-white font-bold p-4 rounded-lg text-lg"
+          >
+            Place Order
+          </button>
         </section>
       )}
     </div>
