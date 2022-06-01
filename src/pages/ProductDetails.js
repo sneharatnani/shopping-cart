@@ -7,6 +7,7 @@ export default function ProductDetails() {
   const { productId } = useParams();
   const product = productData.find((pro) => productId === pro.id);
   const { setCartProducts } = useContext(CartContext);
+
   // add the product to list and if it already exists then increase the quantity
   function updateProducts() {
     setCartProducts((prevCart) => {
