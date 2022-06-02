@@ -8,7 +8,7 @@ import Footer from "./components/Footer.js";
 
 function App() {
   return (
-    <div className="flex flex-col justify-between bg-gray-900">
+    <div className="flex flex-col justify-between bg-gray-900 font-body tracking-wide">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

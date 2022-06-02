@@ -34,12 +34,15 @@ export default function ProductDetails() {
         lg:top-[30vh] lg:absolute lg:rotate-330 lg:right-[5vw] lg:h-[48%]"
       />
       <section className="w-11/12 m-auto left-[10%] top-[59%] capitalize md:w-4/5 lg:absolute lg:top-[37%] lg:w-[48%]">
-        <p className="text-2xl md:text-5xl">{product.title}</p>
+        <p className="text-2xl md:text-5xl font-heading tracking-wide">
+          {product.title}
+        </p>
         <p className="font-normal text-sm normal-case pt-2 text-gray-600">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          id, blanditiis similique laborum sequi, reiciendis voluptates itaque
+          at nobis earum deleniti architecto illum placeat praesentium, ad totam
+          consectetur quaerat aperiam deserunt illo facilis. Hic, obcaecati
+          laborum suscipit animi.
         </p>
         <p className="text-2xl mt-3 mb-6">₹{product.price}</p>
         <button

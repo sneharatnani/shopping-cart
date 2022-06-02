@@ -6,7 +6,7 @@ export default function Home() {
     <div className="h-[90vh]">
       <div className="m-auto lg:w-[80vw]">
         <section className="absolute left-[10%] top-[57%] font-black capitalize md:top-2/3 lg:top-1/3">
-          <h1 className="text-white text-5xl mb-10 md:text-7xl">
+          <h1 className="font-heading text-white text-5xl mb-10 md:text-7xl">
             style and
             <span className="text-lime-300 lg:block"> comfort </span>
             together

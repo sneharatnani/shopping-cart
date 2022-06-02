@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="text-center flex flex-col justify-center items-center h-[10vh] text-white bg-gray-800">
       <p>
-        Crafted with<span> ❤ </span>
+        Crafted with<span className="text-red-500 text-xl"> ❤ </span>
         By{" "}
         <a
           href="https://github.com/sneharatnani"
