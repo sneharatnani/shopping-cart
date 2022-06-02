@@ -8,8 +8,12 @@ export default function Navbar() {
         Shopping<span className="text-lime-300">Cart</span>
       </Link>
       <nav className="flex gap-4">
-        <Link to="/">Home</Link>
-        <Link to="/shop">Shop</Link>
+        <Link to="/" className="hover:text-lime-300">
+          Home
+        </Link>
+        <Link to="/shop" className="hover:text-lime-300">
+          Shop
+        </Link>
         <Cart />
       </nav>
     </header>

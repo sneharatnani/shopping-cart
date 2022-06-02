@@ -16,14 +16,15 @@ export default function CartItem(props) {
         <p className="inline-block my-2">
           <button
             onClick={() => increase(id)}
-            className="h-8 w-8 rounded-full font-bold border border-gray-400"
+            className="h-8 w-8 rounded-full font-bold border border-gray-400 hover:bg-gray-200"
           >
             +
           </button>
           <span className="px-3">{qty}</span>
           <button
             onClick={() => decrease(id)}
-            className="h-8 w-8 rounded-full font-bold border border-gray-400"
+            className="h-8 w-8 rounded-full font-bold border border-gray-400 
+            hover:bg-gray-200"
           >
             ‒
           </button>

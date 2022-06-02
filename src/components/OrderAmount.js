@@ -20,7 +20,8 @@ export default function OrderAmount(props) {
       </p>
       <button
         onClick={removeAll}
-        className="bg-gray-800 text-white font-bold p-4 rounded-lg text-lg"
+        className="bg-gray-800 text-white font-bold p-4 rounded-lg text-lg tracking-wider
+        hover:bg-gray-700"
       >
         Place Order
       </button>
