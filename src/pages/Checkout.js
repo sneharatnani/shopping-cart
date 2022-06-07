@@ -1,12 +1,9 @@
-// import { useContext } from "react";
 import { useSelector } from "react-redux";
-// import { CartContext } from "../CartContext.js";
 import CartItem from "../components/CartItem.js";
 import EmptyCart from "../components/EmptyCart.js";
 import OrderAmount from "../components/OrderAmount.js";
 
 export default function Checkout() {
-  // const { cartProducts, setCartProducts } = useContext(CartContext);
   const cartProducts = useSelector((state) => state.cart);
 
   const finalProducts = cartProducts.map((pro) => (

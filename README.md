@@ -22,6 +22,8 @@ This is a simple Ecommerce website built with ReactJS. See it live [here](https:
 
 - [Tailwindcss](https://tailwindcss.com/)
 
+- [redux](https://redux.js.org/)
+
 - HTML
 
 Image credit: [nike](https://www.nike.com/in/)
