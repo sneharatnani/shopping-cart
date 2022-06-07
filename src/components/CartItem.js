@@ -1,5 +1,9 @@
+import { increaseProducts, decreaseProducts } from "../store/cartSlice.js";
+import { useDispatch } from "react-redux";
+
 export default function CartItem(props) {
-  const { price, url, title, id, qty, increase, decrease } = props;
+  const dispatch = useDispatch();
+  const { price, url, title, id, qty } = props;
 
   return (
     <div className="flex capitalize items-center h-40 md:h-48">
@@ -15,14 +19,15 @@ export default function CartItem(props) {
         <p className="font-bold text-lg md:text-2xl">₹{price * qty}</p>
         <p className="inline-block my-2">
           <button
-            onClick={() => increase(id)}
-            className="h-8 w-8 rounded-full font-bold border border-gray-400 hover:bg-gray-200"
+            onClick={() => dispatch(increaseProducts(id))}
+            className="h-8 w-8 rounded-full font-bold border border-gray-400 
+            hover:bg-gray-200"
           >
             +
           </button>
           <span className="px-3">{qty}</span>
           <button
-            onClick={() => decrease(id)}
+            onClick={() => dispatch(decreaseProducts(id))}
             className="h-8 w-8 rounded-full font-bold border border-gray-400 
             hover:bg-gray-200"
           >

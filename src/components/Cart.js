@@ -1,10 +1,9 @@
-import { useContext } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import cartIcon from "../assets/cart.svg";
-import { CartContext } from "../CartContext.js";
 
 export default function Cart() {
-  const { cartProducts } = useContext(CartContext);
+  const cartProducts = useSelector((currentState) => currentState.cart);
   return (
     <div className="relative">
       <Link to="/cart">

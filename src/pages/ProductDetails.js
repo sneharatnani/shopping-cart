@@ -1,29 +1,12 @@
-import { useContext } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import productData from "../assets/products/productData.js";
-import { CartContext } from "../CartContext.js";
+import { addProduct } from "../store/cartSlice.js";
 
 export default function ProductDetails() {
+  const dispatch = useDispatch();
   const { productId } = useParams();
   const product = productData.find((pro) => productId === pro.id);
-  const { setCartProducts } = useContext(CartContext);
-
-  // add the product to list and if it already exists then increase the quantity
-  function updateProducts() {
-    setCartProducts((prevCart) => {
-      if (prevCart.length === 0) {
-        return [{ ...product, qty: 1 }];
-      } else {
-        const isExists = prevCart.some((prod) => prod.id === productId);
-        const newCart = isExists
-          ? prevCart.map((prod) =>
-              prod.id === productId ? { ...prod, qty: prod.qty + 1 } : prod
-            )
-          : [...prevCart, { ...product, qty: 1 }];
-        return newCart;
-      }
-    });
-  }
 
   return (
     <div className="min-h-[80vh] text-gray-800 bg-[whitesmoke] font-black lg:h-[90vh]">
@@ -46,7 +29,7 @@ export default function ProductDetails() {
         </p>
         <p className="text-2xl mt-3 mb-6">₹{product.price}</p>
         <button
-          onClick={updateProducts}
+          onClick={() => dispatch(addProduct(product))}
           className="bg-button-gradient py-5 px-9 rounded-full text-2xl font-bold"
         >
           Add To Cart

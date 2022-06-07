@@ -1,5 +1,9 @@
+import { useDispatch } from "react-redux";
+import { removeAllProducts } from "../store/cartSlice.js";
+
 export default function OrderAmount(props) {
-  const { getTotal, removeAll } = props;
+  const dispatch = useDispatch();
+  const { getTotal } = props;
 
   return (
     <section
@@ -19,7 +23,7 @@ export default function OrderAmount(props) {
         Order Total <span>₹{getTotal()}</span>
       </p>
       <button
-        onClick={removeAll}
+        onClick={() => dispatch(removeAllProducts())}
         className="bg-gray-800 text-white font-bold p-4 rounded-lg text-lg tracking-wider
         hover:bg-gray-700"
       >
