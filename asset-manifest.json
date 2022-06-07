@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shopping-cart/static/css/main.2218525e.css",
-    "main.js": "/shopping-cart/static/js/main.3dbb93f6.js",
+    "main.js": "/shopping-cart/static/js/main.b3d623a7.js",
     "static/media/bg.png": "/shopping-cart/static/media/bg.7aad3f7942735a3486b5.png",
     "static/media/Roboto-Regular.ttf": "/shopping-cart/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/Raleway-Bold.ttf": "/shopping-cart/static/media/Raleway-Bold.d1a96e2aa6257c864d4d.ttf",
@@ -17,10 +17,10 @@
     "index.html": "/shopping-cart/index.html",
     "static/media/cart.svg": "/shopping-cart/static/media/cart.987c5aad68251ae29862520fefd247ce.svg",
     "main.2218525e.css.map": "/shopping-cart/static/css/main.2218525e.css.map",
-    "main.3dbb93f6.js.map": "/shopping-cart/static/js/main.3dbb93f6.js.map"
+    "main.b3d623a7.js.map": "/shopping-cart/static/js/main.b3d623a7.js.map"
   },
   "entrypoints": [
     "static/css/main.2218525e.css",
-    "static/js/main.3dbb93f6.js"
+    "static/js/main.b3d623a7.js"
   ]
 }
