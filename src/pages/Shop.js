@@ -5,11 +5,10 @@ export default function Shop() {
   const shoeCards = productData.map((shoe) => <Card key={shoe.id} {...shoe} />);
 
   return (
-    <main
-      className="grid min-h-[80vh] justify-items-center py-8 gap-y-8 text-center
-    bg-white md:grid-cols-3"
-    >
-      {shoeCards}
+    <main className="min-h-[80vh] bg-white">
+      <div className="grid justify-items-center py-8 gap-y-8 text-center md:grid-cols-3 2xl:w-[64rem] mx-auto">
+        {shoeCards}
+      </div>
     </main>
   );
 }
