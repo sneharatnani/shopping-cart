@@ -1,29 +1,41 @@
 # Shopping-Cart
 
-This is a simple Ecommerce website built with ReactJS. See it live [here](https://sneharatnani.github.io/shopping-cart/)
+![img](./src/assets/shopping-cart.png)
 
-## Features
+Shopping-Cart is an Ecommerce website built with React.
 
-- User can browse the available products
+:point_right: **See it live [here](https://sneharatnani.github.io/shopping-cart/)**
 
-- Increase and decrease the amount of products you want to buy
+## Features :sparkles:
 
-- It allows you to know the product details.
+- User can browse the available products.
+- Increase and decrease the number of products.
+- Check individual product details.
+- Add and remove products from the shopping cart.
+- User can Place the order with fully functional cart.
+- Fully responsive design and clean user interface.
 
-- You can Place the order with fully functional cart
+## Built With :hammer_and_wrench:
 
-- Fully responsive design and clean user interface
-
-## Technologies Used
-
-- [ReactJS](https://reactjs.org/)
-
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [React Router](https://reactrouter.com/)
 
-- [Tailwindcss](https://tailwindcss.com/)
+## Quick Start :rocket:
 
-- [redux](https://redux.js.org/)
+```bash
+# clone repo
+git clone https://github.com/sneharatnani/shopping-cart.git
 
-- HTML
+# changing directory
+cd shopping-cart
 
-Image credit: [nike](https://www.nike.com/in/)
+# installing dependencies
+npm install
+
+# starting the server
+npm start
+```
+
+_Image credit: [nike.com](https://www.nike.com)_
